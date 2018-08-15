@@ -124,6 +124,9 @@ GEM
       sexp_processor (~> 4.8)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    has_scope (0.7.2)
+      actionpack (>= 4.1)
+      activesupport (>= 4.1)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
@@ -338,6 +341,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   figaro
+  has_scope
   letter_opener
   listen
   nexmo

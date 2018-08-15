@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
-
+  has_scope :by_tasktype_id
   def index
-    render json: Task.all
+    render json: apply_scopes(Task.all) 
   end
 
   def show

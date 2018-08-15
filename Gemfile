@@ -9,6 +9,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'active_model_serializers'
 gem 'authority'
 gem 'rack-cors'
+gem 'has_scope'
 
 gem 'exception_notification'
 gem 'redis'
