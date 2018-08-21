@@ -1,5 +1,10 @@
 class TasksController < ApplicationController
-  has_scope :by_tasktype_id
+  has_scope :by_tasktype_name
+  has_scope :by_user_name
+  has_scope :by_task_status
+  has_scope :by_task_name
+  has_scope :by_task_priority
+  
   def index
     render json: apply_scopes(Task.all) 
   end
@@ -26,5 +31,10 @@ class TasksController < ApplicationController
     task = Task.find(params[:id])
     task.destroy
     render json: task
+  end
+
+  def create_report
+    report = Report.new
+    report.notify_on_slack
   end
 end

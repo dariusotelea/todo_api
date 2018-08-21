@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  has_scope :by_user_name
 
   def index
     render json: User.all

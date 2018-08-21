@@ -1,5 +1,6 @@
 class TasktypesController < ApplicationController
-
+  has_scope :by_tasktype_name
+  
   def index
     render json: Tasktype.all
   end
