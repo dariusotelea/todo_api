@@ -1,6 +1,6 @@
 class TasktypesController < ApplicationController
   has_scope :by_tasktype_name
-  
+
   def index
     render json: Tasktype.all
   end
@@ -9,8 +9,8 @@ class TasktypesController < ApplicationController
     tasktype = Tasktype.find(params[:id])
     render json: tasktype
   end
-  
-  def create 
+
+  def create
     tasktype = Tasktype.create api_params(:name, :icon)
     render json: tasktype
   end
@@ -20,7 +20,7 @@ class TasktypesController < ApplicationController
     tasktype.update api_params(:name, :icon)
     render json: tasktype
   end
-  
+
   def destroy
     tasktype = Tasktype.find(params[:id])
     tasktype.destroy

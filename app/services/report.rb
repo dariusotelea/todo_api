@@ -4,25 +4,25 @@ class Report
   attr_reader :report
 
   def initialize
-    @report = "Report"
+    @report = "REPORT"
   end
 
   def todo_tasks
-    report << " \n Tasks not started "
+    report << " \n <-- Tasks not started -->"
     Task.where(status:'Not started').each do |task|
       report << " \n ID: #{task.id} Name: #{task.name} "
     end
   end
 
   def pending_tasks
-    report << " \n Tasks in progress"
-    Task.where(status:'In proggress').each do |task|
+    report << " \n <-- Tasks in progress -->"
+    Task.where(status:'In progress').each do |task|
       report << " \n ID: #{task.id} Name: #{task.name} "
     end 
   end
 
   def done_tasks
-    report << "\n Done Tasks"
+    report << "\n <-- Done Tasks -->"
     Task.where(status:'Ended').each do |task|
       report << " \nID: #{task.id} Name: #{task.name} "
     end
